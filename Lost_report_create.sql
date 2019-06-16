@@ -14,11 +14,11 @@ CREATE TABLE Criminal_article (
 CREATE TABLE Location (
     idLocation int  NOT NULL identity,
     location_name nvarchar(50)  NOT NULL,
-    region_name nvarchar(50)  NOT NULL,
-    oblast_name nvarchar(50)  NOT NULL,
-    location_name_ru nvarchar(50)  NOT NULL,
+    region_name nvarchar(50),
+    oblast_name nvarchar(50),
+    location_name_ru nvarchar(50),
     region_name_ru nvarchar(50),
-    oblast_name_ru nvarchar(50)  NOT NULL,
+    oblast_name_ru nvarchar(50),
     CONSTRAINT Location_pk PRIMARY KEY  (idLocation)
 );
 
@@ -57,7 +57,6 @@ CREATE TABLE Police_department (
 CREATE TABLE Restraint (
     idRestraint int  NOT NULL identity,
     title nvarchar(50)  NOT NULL,
-    date date  NOT NULL,
     CONSTRAINT Restraint_pk PRIMARY KEY  (idRestraint)
 );
 
