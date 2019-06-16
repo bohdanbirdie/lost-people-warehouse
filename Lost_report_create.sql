@@ -16,6 +16,9 @@ CREATE TABLE Location (
     location_name nvarchar(50)  NOT NULL,
     region_name nvarchar(50)  NOT NULL,
     oblast_name nvarchar(50)  NOT NULL,
+    location_name_ru nvarchar(50)  NOT NULL,
+    region_name_ru nvarchar(50),
+    oblast_name_ru nvarchar(50)  NOT NULL,
     CONSTRAINT Location_pk PRIMARY KEY  (idLocation)
 );
 
