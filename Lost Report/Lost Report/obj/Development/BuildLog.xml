@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Lost Report</Name>
-    <LastWriteTime>2019-06-16T20:38:55.9388104Z</LastWriteTime>
+    <LastWriteTime>2019-06-18T23:45:42.9545594Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,27 +13,37 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LostPerson.dtsx</Name>
-      <LastWriteTime>2019-05-19T14:04:38.1623471Z</LastWriteTime>
+      <LastWriteTime>2019-06-17T19:42:08.9508976Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>TimeDim.dtsx</Name>
-      <LastWriteTime>2019-05-19T14:09:37.0226852Z</LastWriteTime>
+      <LastWriteTime>2019-06-18T21:52:38.6555331Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CriminalArticle (1).dtsx</Name>
-      <LastWriteTime>2019-05-28T15:54:39.9612693Z</LastWriteTime>
+      <LastWriteTime>2019-06-17T20:51:01.0220432Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Location_aggregation.dtsx</Name>
-      <LastWriteTime>2019-06-16T08:28:09.0575439Z</LastWriteTime>
+      <LastWriteTime>2019-06-19T00:02:36.705191Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Restraint.dtsx</Name>
       <LastWriteTime>2019-06-16T20:38:55.8969574Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Fact table.dtsx</Name>
+      <LastWriteTime>2019-06-19T00:03:19.6735389Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Execute all dimensions.dtsx</Name>
+      <LastWriteTime>2019-06-18T21:45:20.1109882Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

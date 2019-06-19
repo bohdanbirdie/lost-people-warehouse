@@ -11,8 +11,8 @@
   DTS:LocaleID="1058"
   DTS:ObjectName="TimeDim"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{68E8C16E-1E03-4555-A1FE-BB9509ED5394}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{7596A66D-E6E2-475B-873F-5F644D6BD3C1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -244,81 +244,87 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[LOST_DATE]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="LOST_DATE"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[LOST_DATE]" />
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[year]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Case 1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]"
-                      dataType="date"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]"
-                      name="date"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_DATE)([SUBSTRING](#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[LOST_DATE]},1,10))</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_DATE)(SUBSTRING(LOST_DATE,1,10))</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
+                  name="Case 1"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[year]} &lt; 2020</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">year &lt; 2020</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -343,7 +349,7 @@
                       refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input].Columns[date]"
                       cachedDataType="date"
                       cachedName="date"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]" />
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -369,7 +375,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DAY](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]})</property>
+                          name="Expression">[DAY](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -391,7 +397,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]})</property>
+                          name="Expression">[MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -413,7 +419,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[YEAR](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]})</property>
+                          name="Expression">[YEAR](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -436,7 +442,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(([DATEPART]("DW",#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 7) ? "SUNDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 1) ? "MONDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 2) ? "TUESDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 3) ? "WEDNESDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 4) ? "THURSDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 5) ? "FRIDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 6) ? "SATURDAY" : "NULL")</property>
+                          name="Expression">(([DATEPART]("DW",#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 7) ? "SUNDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 1) ? "MONDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 2) ? "TUESDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 3) ? "WEDNESDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 4) ? "THURSDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 5) ? "FRIDAY" : ([DATEPART]("DW",#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 6) ? "SATURDAY" : "NULL")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -459,7 +465,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">([MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 1 ? "Jan" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 2 ? "Feb" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 3 ? "Mar" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 4 ? "Apr" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 5 ? "May" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 6 ? "Jun" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 7 ? "Jul" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 8 ? "Aug" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 9 ? "Sep" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 10 ? "Oct" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 11 ? "Nov" : [MONTH](#{Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]}) == 12 ? "Dec" : "")</property>
+                          name="Expression">([MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 1 ? "Jan" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 2 ? "Feb" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 3 ? "Mar" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 4 ? "Apr" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 5 ? "May" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 6 ? "Jun" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 7 ? "Jul" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 8 ? "Aug" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 9 ? "Sep" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 10 ? "Oct" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 11 ? "Nov" : [MONTH](#{Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]}) == 12 ? "Dec" : "")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -489,6 +495,89 @@
                       refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input].Columns[LOST_DATE]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LOST_DATE"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[LOST_DATE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DATE)([SUBSTRING](#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[LOST_DATE]},1,10))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DATE)(SUBSTRING(LOST_DATE,1,10))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -776,12 +865,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date]"
-                      cachedDataType="date"
-                      cachedName="date"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[date]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[day]"
                       cachedDataType="i4"
                       cachedName="day"
@@ -813,6 +896,12 @@
                       cachedName="MonthName"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MonthName]"
                       lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[MonthName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="date"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output].Columns[date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -949,13 +1038,18 @@
           </components>
           <paths>
             <path
+              refId="Package\Data Flow Task.Paths[Case 1]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Case 1"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Case 1]" />
+            <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
               endId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output1]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
             <path
@@ -965,7 +1059,7 @@
               startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Sort Output]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]"
               name="Sort Output"
               startId="Package\Data Flow Task\Sort.Outputs[Sort Output]" />
           </paths>
@@ -985,7 +1079,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E6B4B365-DF0C-4DD5-9FC4-8668E8E00B07}"
-          SQLTask:SqlStatementSource="delete from Time" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="delete from Time;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1012,13 +1106,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="145,67" />
-        <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="144,176" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="145,67" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="223,109">
@@ -1048,15 +1142,61 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="175,78" />
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="172,473" />
         <NodeLayout
           Size="98,42"
           Id="Package\Data Flow Task\Sort"
           TopLeft="199,178" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Derived Column 2"
+          TopLeft="179,263" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\Derived Column 1"
+          TopLeft="174,328" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="175,78" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="248,220">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,43"
+              Start="0,0"
+              End="12.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="8.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,21.5"
+                    Point2="12.5,21.5"
+                    Point3="12.5,25.5" />
+                  <mssgle:LineSegment
+                    End="12.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="249.25,120">
@@ -1079,50 +1219,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="172,270" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output]"
-          TopLeft="248.5,220">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Data Flow Task\Derived Column 1"
-          TopLeft="173,367" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="251.75,312">
+          TopLeft="258,305">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="0,23"
               Start="0,0"
-              End="0,47.5">
+              End="0,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1132,29 +1242,53 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="172,449" />
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="180,398" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="256,409">
+          TopLeft="256.5,370">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40"
+              EndConnector="0,28"
               Start="0,0"
-              End="0,32.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Case 1]"
+          TopLeft="257.5,440">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.2180859375,7.97314453125,30.436171875,9.5537109375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

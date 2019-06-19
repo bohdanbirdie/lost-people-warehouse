@@ -11,8 +11,8 @@
   DTS:LocaleID="1058"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{5F77A535-4118-43B2-A6DD-0FCFD8AA2CFF}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{0E6F8AFB-FE8E-43BF-9426-62D71EDAA378}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{0C5BF84E-AA75-44D0-A2E3-FA3E6747363B}"
+              DTS:DTSID="{E566475B-AFB1-4424-A37C-B30AC4B1D345}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OVD"
-              DTS:DTSID="{9252AE89-A695-4FE8-9571-9D9D0828F2B1}"
+              DTS:DTSID="{55B8A3C1-AB6B-4237-BA28-2AC4CDE6C86D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CATEGORY"
-              DTS:DTSID="{0788854F-B582-476B-A2A4-B328DC7EEB21}"
+              DTS:DTSID="{17C20101-CC66-49F7-8863-C0B25F7CDBDF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FIRST_NAME_R"
-              DTS:DTSID="{5B823CC0-06B0-41E8-A397-2D190BD9BFB4}"
+              DTS:DTSID="{4275923E-F342-448C-B5F1-07DF16B3F4D9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +85,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LAST_NAME_R"
-              DTS:DTSID="{A851AAAE-DC7D-4E43-AB19-E404F29D30DA}"
+              DTS:DTSID="{B148F27F-7BBB-4513-B6E2-C0A000FFF2C7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +94,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MIDDLE_NAME_R"
-              DTS:DTSID="{3492E4C9-719F-4450-8FBC-EFB39CE8D331}"
+              DTS:DTSID="{11CC4F7E-954B-45A7-90F6-6683FD994EE3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +103,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="BIRTH_DATE"
-              DTS:DTSID="{2369BAC6-E2C6-40F7-A225-4E468EA59C55}"
+              DTS:DTSID="{5A09E221-DB80-4F18-ADCB-A8728DE5615B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +112,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SEX"
-              DTS:DTSID="{6A03088F-6A03-4B48-A830-059FD09902F2}"
+              DTS:DTSID="{636A6688-967B-4AF2-BBED-1EBAA993ECE6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +121,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LOST_DATE"
-              DTS:DTSID="{92C425CC-8B06-461E-8EB0-18EE0258B4A0}"
+              DTS:DTSID="{A98080BE-7A53-4295-A975-9B8743D3A829}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -130,16 +130,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LOST_PLACE"
-              DTS:DTSID="{4A04DB19-F1EF-42E6-B48A-9520CE2C2F37}"
+              DTS:DTSID="{785E6760-78D2-453F-A5B8-FDDD04F4ED3E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="255"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ARTICLE_CRIM"
-              DTS:DTSID="{B6459D6B-E231-42C6-9C23-66EB77FDF8EF}"
+              DTS:DTSID="{0B713CD7-0F9F-435B-A3F4-A8794C4C8B3D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -148,7 +148,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RESTRAINT"
-              DTS:DTSID="{262D82E0-59D9-4115-8A0A-F00B9FC981B9}"
+              DTS:DTSID="{2AF0BF4F-0A2C-43AA-9FEB-D556839F0358}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -157,7 +157,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CONTACT"
-              DTS:DTSID="{66B75825-E0EC-4FD2-823B-1DC60706EE82}"
+              DTS:DTSID="{FF986CFE-F788-4F09-9300-2AB39BEA756A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -166,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHOTOID"
-              DTS:DTSID="{4436A23F-2C56-40CE-BAC4-D7092CDF6BDC}"
+              DTS:DTSID="{301D62C4-2AC1-443C-8478-0A0F53D65896}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -175,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FIRST_NAME_E"
-              DTS:DTSID="{62A05573-FFA3-4F67-BFE6-565A46F07C97}"
+              DTS:DTSID="{5195F55A-8592-4DEF-8C14-F94955F11FA3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LAST_NAME_E"
-              DTS:DTSID="{2F606F98-E609-4FFB-B156-F62E233583F1}"
+              DTS:DTSID="{295A1F41-4910-4727-846A-BFD342B6CEB1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MIDDLE_NAME_E"
-              DTS:DTSID="{5D5ECB29-845C-4F9A-9924-49962AA2292A}"
+              DTS:DTSID="{7BAFA90A-9007-4188-9DA0-27C8EF18C22C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FIRST_NAME_U"
-              DTS:DTSID="{C73223E3-4E3B-46E4-A528-D72E8CF31A8C}"
+              DTS:DTSID="{00F7D86E-FBC1-4EB5-8545-2BAF0CC01C13}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LAST_NAME_U"
-              DTS:DTSID="{5BE53A1D-18E1-4125-AC5D-575910BB6562}"
+              DTS:DTSID="{CB35FCCF-1F29-4678-AA93-A3AE9817E6CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MIDDLE_NAME_U"
-              DTS:DTSID="{B604AD97-5AC0-4756-A984-1C8C9ABA172D}"
+              DTS:DTSID="{8A4430AA-2D03-4BA5-A6DB-24DBC0F47161}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -322,8 +322,7 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ARTICLE_CRIM]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ARTICLE_CRIM]"
@@ -407,8 +406,7 @@
                       name="LOST_PLACE" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ARTICLE_CRIM]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="ARTICLE_CRIM" />
                     <externalMetadataColumn
@@ -649,7 +647,7 @@
                   dataType="System.Int32"
                   description="Specifies the type of join to perform."
                   name="JoinType"
-                  typeConverter="JoinType">2</property>
+                  typeConverter="JoinType">0</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the number of columns in the ordering key."
@@ -701,6 +699,12 @@
                       cachedName="articleNumber"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[articleNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[ARTICLE_CRIM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ARTICLE_CRIM"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ARTICLE_CRIM]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -751,6 +755,20 @@
                           dataType="System.Int32"
                           description="The input column associated with this output column"
                           name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[articleName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[ARTICLE_CRIM]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[ARTICLE_CRIM]"
+                      name="ARTICLE_CRIM">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[ARTICLE_CRIM]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -844,6 +862,13 @@
                       cachedName="articleName"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[article_name]"
                       lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[articleName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ARTICLE_CRIM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ARTICLE_CRIM"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[article_source]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[ARTICLE_CRIM]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -854,13 +879,18 @@
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[article_name]"
                       dataType="wstr"
-                      length="255"
+                      length="15"
                       name="article_name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[article_description]"
                       dataType="wstr"
-                      length="500"
+                      length="200"
                       name="article_description" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[article_source]"
+                      dataType="wstr"
+                      length="200"
+                      name="article_source" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1781,8 +1811,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Data Flow Task\Script Component.Inputs[Input 0].Columns[ARTICLE_CRIM]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
+                      cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ARTICLE_CRIM"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ARTICLE_CRIM]" />
@@ -1831,8 +1860,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[ARTICLE_CRIM]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
+                      cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ARTICLE_CRIM"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ARTICLE_CRIM]">
@@ -1875,8 +1903,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ARTICLE_CRIM]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[ARTICLE_CRIM]"
                       name="ARTICLE_CRIM">
@@ -2171,6 +2198,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Data Flow Task\Sort"
           TopLeft="427,192" />
         <NodeLayout
+          Size="107,42"
+          Id="Package\Data Flow Task\Sort 1"
+          TopLeft="158,123" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="301,390" />
@@ -2183,81 +2214,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="360,1" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Data Flow Task\Sort 1"
-          TopLeft="158,123" />
-        <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task\Flat File Source 1"
           TopLeft="105,9" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output1]"
-          TopLeft="476,234">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.6666666666667,59"
-              Start="0,0"
-              End="-68.6666666666667,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.9696048632219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.9696048632219"
-                    Point2="0,34.9696048632219"
-                    Point3="-4,34.9696048632219" />
-                  <mssgle:LineSegment
-                    End="-64.6666666666667,34.9696048632219" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.6666666666667,34.9696048632219"
-                    Point2="-68.6666666666667,34.9696048632219"
-                    Point3="-68.6666666666667,38.9696048632219" />
-                  <mssgle:LineSegment
-                    End="-68.6666666666667,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output]"
-          TopLeft="211.5,165">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="175.5,128"
-              Start="0,0"
-              End="175.5,120.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60"
-                    Point2="0,64"
-                    Point3="4,64" />
-                  <mssgle:LineSegment
-                    End="171.5,64" />
-                  <mssgle:CubicBezierSegment
-                    Point1="171.5,64"
-                    Point2="175.5,64"
-                    Point3="175.5,68" />
-                  <mssgle:LineSegment
-                    End="175.5,120.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output 0]"
           TopLeft="447.5,161">
@@ -2374,6 +2333,74 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point3="12,42" />
                   <mssgle:LineSegment
                     End="12,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
+          TopLeft="476,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.6666666666667,59"
+              Start="0,0"
+              End="-68.6666666666667,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9696048632219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.9696048632219"
+                    Point2="0,34.9696048632219"
+                    Point3="-4,34.9696048632219" />
+                  <mssgle:LineSegment
+                    End="-64.6666666666667,34.9696048632219" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.6666666666667,34.9696048632219"
+                    Point2="-68.6666666666667,34.9696048632219"
+                    Point3="-68.6666666666667,38.9696048632219" />
+                  <mssgle:LineSegment
+                    End="-68.6666666666667,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="211.5,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.166666666667,128"
+              Start="0,0"
+              End="155.166666666667,120.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.8662613981763" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,71.8662613981763"
+                    Point2="0,75.8662613981763"
+                    Point3="4,75.8662613981763" />
+                  <mssgle:LineSegment
+                    End="151.166666666667,75.8662613981763" />
+                  <mssgle:CubicBezierSegment
+                    Point1="151.166666666667,75.8662613981763"
+                    Point2="155.166666666667,75.8662613981763"
+                    Point3="155.166666666667,79.8662613981763" />
+                  <mssgle:LineSegment
+                    End="155.166666666667,120.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
